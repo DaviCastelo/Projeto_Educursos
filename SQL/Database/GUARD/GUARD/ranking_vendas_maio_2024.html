@@ -1,0 +1,332 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ranking de Vendas - Maio 2024</title>
+        <style>
+            table {
+                width: 80%;
+                border-collapse: collapse;
+                margin: 20px auto;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .search-box {
+                margin-bottom: 20px;
+            }
+        </style>
+        <script>
+            function searchByName() {
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("rankingTable");
+                tr = table.getElementsByTagName("tr");
+                
+                // Loop through all table rows, starting from index 1 to skip header row
+                for (i = 1; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0]; // Index 0 is the first column (nome_voluntario)
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                // Inicialmente, mostrar todas as linhas da tabela
+                var table = document.getElementById("rankingTable");
+                var rows = table.getElementsByTagName("tr");
+                for (var i = 0; i < rows.length; i++) {
+                    rows[i].style.display = "";
+                }
+
+                // Adicionar evento para filtrar em tempo real ao digitar
+                var input = document.getElementById("searchInput");
+                input.addEventListener("keyup", function() {
+                    searchByName();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Ranking de Vendas - Maio 2024</h1>
+        <div class="search-box">
+            <label for="searchInput">Pesquisar por nome do vendedor:</label>
+            <input type="text" id="searchInput" placeholder="Digite o nome do vendedor...">
+        </div>
+        <table id="rankingTable">
+            <thead>
+                <tr>
+                    <th>Nome do Vendedor</th>
+                    <th>Total de Vendas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>nome_voluntario</th>
+      <th>total_vendas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MONIQUE ROCHA BENICIO</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>LARA GABRIELLI MENESES DE ALMEIDA</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <td>NATALIA ARAUJO PINHO DOS SANTOS</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <td>PABLIANNY ALVES CAJAZEIRAS</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>CIRO DE SOUSA BANDEIRA</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <td>LUCAS FERREIRA RODRIGUES</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <td>ALEXANDRE LIMA</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td>SAMAIO BANDEIRA DE LIMA</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td>MARIA THAIS RODRIGUES SILVA</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>BRUNO HENRIQUE ARAúJO RODRIGUES</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>ROBSON FREIRE  CHAVES</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>DAVID DE OLIVEIRA SERPA</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>FERNANDO ONOFRE PAULA GOMES</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>FONTINELE SOUSA DOS SANTOS</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>MARIA ORLANI DA COSTA FREITAS</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>WILTON CéSAR LIMA DA SILVA</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>RONNY FREIRE CHAVES</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>FRANCISCO REGILANO DA SILVA</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>FRANK MILLER DE LIMA MAIA</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>JESSICA BASTOS NERY</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>MAGNUM MILLYANO CARVALHO DE MATOS</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>TALITA ARAUJO BAIA</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>JOSé WAGNER DIAS DAS NEVES</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>JOSE HENRIQUE ARAUJO DE SOUSA</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>MARCO ANTONIO BARROSO DE SOUSA</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>ROSALINE TEIXEIRA GONçALVES</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>KALLINY EMANUELLA LOPES DA SILVA</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>CAROLINA MOREIRA DE OLIVEIRA MELO</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>FRANCISCO SALDANHA LEMOS NETO</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>NATHALIA STEPHANY VIANA LOPES</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>HELLEN RAMACCIOTTE</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>GUSTAVO MACIEL</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>JANAINA LIMA PINHEIRO</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>ADRIANO CLAUDINO VIANA</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>KAINã MOREIRA DOS SANTOS</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>GEAN CARLOS MAGALHãES LUNARDELLI</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>ARCLEY FREITAS</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>MARLEUDO FLORENCIO MARTINS</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>DANRLEY WINDSON NICACIO BARBOSA</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>ELISAMA PEREIRA FERREIRA</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>DANIELLY CARVALHO SOUZA</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>VIVIANE PEREIRA DOS SANTOS CASTELO</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>JADE OLIVEIRA DE ALENCAR</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>JHENIFFER ALEXANDRE ALVES</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>PAULA OLIVEIRA DE LIMA</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>CRISTIANO BANDEIRA</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>JAYNIANE AZEVEDO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>FERNANDO DIAS VIEIRA DA SILVA</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>PAULO CESAR SILVEIRA DE ALMEIDA</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>ISAíAS BRUNO BATISTA DE CARVALHO BERNARDO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>LUíZ FELIPE MARCONDES PINTO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>RUDSON MáXIMO DE CASTRO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>ANTôNIO IZIDIO GOUVEIA DOMINGUES GOMES</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>LIZANDRA SILVA BENICIO CAVALCANTE</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>KAROLINA CASTELO BRANCO PINHEIRO NEVES</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>JOAQUIM INGLADESON DA SILVA GONDIM</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>RANIERE DE SOUSA HONORIO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>JOHNATAN FERREIRA BARBOSA</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>ANA LAURA SILVA DE OLIVEIRA</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>THIAGO NOGUEIRA DE OLIVEIRA</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

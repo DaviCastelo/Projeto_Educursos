@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduCursos - Plataforma de Aprendizado</title>
+    <meta
+      name="description"
+      content="EduCursos - A plataforma definitiva para aprendizado online, oferecendo cursos, avaliações e ferramentas de desenvolvimento pessoal."
+    />
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #0e2238"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="#">EduCursos</a>
+      </div>
+    </nav>
+    <div class="wrapper d-flex justify-content-center align-items-center">
+      <aside id="sidebar">
+        <div class="d-flex">
+          <button class="toggle-btn" type="button">
+            <i class="lni lni-grid-alt"></i>
+          </button>
+          <div class="sidebar-logo">
+            <a href="#">Olá, {{ user_name }}</a>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a
+              href="{{ url_for('home') }}"
+              title="Página inicial"
+              class="sidebar-link"
+            >
+              <i class="lni lni-home"></i>
+              <span>Página inicial</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              href="{{ url_for('cursos') }}"
+              title="Cursos"
+              class="sidebar-link"
+            >
+              <i class="lni lni-agenda"></i>
+              <span>Cursos</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              href="#"
+              class="sidebar-link collapsed has-dropdown"
+              data-bs-toggle="collapse"
+              data-bs-target="#auth"
+              aria-expanded="false"
+              aria-controls="auth"
+              title="Avaliações"
+            >
+              <i class="lni lni-graduation"></i>
+              <span>Avaliações</span>
+            </a>
+            <ul
+              id="auth"
+              class="sidebar-dropdown list-unstyled collapse"
+              data-bs-parent="#sidebar"
+            >
+              <li class="sidebar-item">
+                <a
+                  href="{{ url_for('provas') }}"
+                  title="Provas"
+                  class="sidebar-link"
+                  >Provas</a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  href="{{ url_for('trabalhos') }}"
+                  title="Trabalhos"
+                  class="sidebar-link"
+                  >Trabalhos</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a
+              href="{{ url_for('perfil') }}"
+              title="Perfil"
+              class="sidebar-link"
+            >
+              <i class="lni lni-user"></i>
+              <span>Perfil</span>
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">
+          <a href="{{ url_for('logout') }}" title="Sair" class="sidebar-link">
+            <i class="lni lni-exit"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </aside>
+      <div class="main p-3 text-center">
+        <div class="text-center">
+          <h1>Bem-vindo ao EduCursos</h1>
+          <p class="text-center">
+            Aqui na nossa plataforma web, você encontrará com:
+          </p>
+          <p class="text-center">Com a EduCursos, você terá acesso a:</p>
+          <ul class="text-start mx-auto" style="max-width: 600px">
+            <li>
+              <strong>Mais de 500 cursos</strong> em diversas áreas do
+              conhecimento, desde tecnologia e negócios até artes e humanidades.
+            </li>
+            <li>
+              <strong>Materiais didáticos</strong> atualizados e produzidos por
+              especialistas renomados em suas áreas de atuação.
+            </li>
+            <li>
+              <strong>Ferramentas interativas</strong> que facilitam o
+              aprendizado, como quizzes, fóruns de discussão, e laboratórios
+              virtuais.
+            </li>
+            <li>
+              <strong>Avaliações contínuas</strong> para medir seu progresso e
+              identificar áreas de melhoria.
+            </li>
+            <li>
+              <strong>Certificados</strong> de conclusão reconhecidos pelo
+              mercado de trabalho, ajudando a impulsionar sua carreira.
+            </li>
+            <li>
+              <strong>Suporte ao aluno</strong> disponível 24/7 para tirar
+              dúvidas e oferecer orientação.
+            </li>
+          </ul>
+          <p class="text-center">
+            Na EduCursos, acreditamos que a educação é a chave para um futuro
+            melhor. Junte-se a nós e comece sua jornada de aprendizado hoje
+            mesmo!
+          </p>
+          <p class="text-center">
+            <strong
+              >Faça parte da nossa comunidade e transforme sua vida com a
+              EduCursos.</strong
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+  </body>
+</html>
